@@ -14,6 +14,7 @@ public class BaseballCoach implements Coach {
 
     private FortuneService fortuneService;
 
+    public BaseballCoach() {}
     public BaseballCoach(FortuneService fService) {
         this.fortuneService = fService;
     }
@@ -25,7 +26,14 @@ public class BaseballCoach implements Coach {
 
     @Override
     public String getDailyFortune() {
-        return fortuneService.getFortune();
+        return "[BC]: " + fortuneService.getFortune();
     }
 
+    public FortuneService getFortuneService() {
+        return fortuneService;
+    }
+
+    public void setFortuneService(FortuneService fortuneService) {
+        this.fortuneService = fortuneService;
+    }
 }

@@ -20,10 +20,14 @@ public class MySpringApp {
 
         // Retrieve Bean from Spring Container
         Coach theCoach = context.getBean("myCoach", Coach.class);
+        Coach theOtherCoach = context.getBean("myOtherCoach", Coach.class);
 
         // Call Methods on Bean
         System.out.println(theCoach.getDailyWorkout());
         System.out.println(theCoach.getDailyFortune());
+
+        System.out.println(theOtherCoach.getDailyWorkout());
+        System.out.println(theOtherCoach.getDailyFortune());
 
         // Close Context
         context.close();

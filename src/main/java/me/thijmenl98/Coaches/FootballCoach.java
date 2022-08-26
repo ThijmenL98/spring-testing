@@ -14,6 +14,7 @@ public class FootballCoach implements Coach {
 
     private FortuneService fortuneService;
 
+    public FootballCoach() {}
     public FootballCoach(FortuneService fService) {
         this.fortuneService = fService;
     }
@@ -25,7 +26,14 @@ public class FootballCoach implements Coach {
 
     @Override
     public String getDailyFortune() {
-        return fortuneService.getFortune();
+        return "[FC]: " + fortuneService.getFortune();
     }
 
+    public FortuneService getFortuneService() {
+        return fortuneService;
+    }
+
+    public void setFortuneService(FortuneService fortuneService) {
+        this.fortuneService = fortuneService;
+    }
 }

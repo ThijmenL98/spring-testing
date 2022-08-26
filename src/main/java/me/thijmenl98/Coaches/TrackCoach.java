@@ -14,6 +14,7 @@ public class TrackCoach implements Coach {
 
     private FortuneService fortuneService;
 
+    public TrackCoach() {}
     public TrackCoach(FortuneService fService) {
         this.fortuneService = fService;
     }
@@ -25,6 +26,14 @@ public class TrackCoach implements Coach {
 
     @Override
     public String getDailyFortune() {
-        return fortuneService.getFortune();
+        return "[TC]: " + fortuneService.getFortune();
+    }
+
+    public FortuneService getFortuneService() {
+        return fortuneService;
+    }
+
+    public void setFortuneService(FortuneService fortuneService) {
+        this.fortuneService = fortuneService;
     }
 }

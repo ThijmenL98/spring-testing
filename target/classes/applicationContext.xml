@@ -17,8 +17,13 @@
     </bean>
 
     <bean id="myCoach"
-        class="me.thijmenl98.Coaches.FootballCoach">
+          class="me.thijmenl98.Coaches.FootballCoach">
         <constructor-arg ref="myFortuneService"/>
+    </bean>
+
+    <bean id="myOtherCoach"
+          class="me.thijmenl98.Coaches.TrackCoach">
+        <property name="fortuneService" ref="myFortuneService"/>
     </bean>
 
 </beans>
