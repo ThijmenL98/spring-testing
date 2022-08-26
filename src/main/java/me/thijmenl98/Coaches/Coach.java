@@ -10,6 +10,8 @@ package me.thijmenl98.Coaches;
  **/
 public interface Coach {
 
-    public String getDailyWorkout();
+    String getDailyWorkout();
+
+    String getDailyFortune();
 
 }

@@ -13,8 +13,12 @@
         <property name="printedLoggerLevel" value="FINE"/>
     </bean>
 
+    <bean id="myFortuneService" class="me.thijmenl98.FortuneServices.HappyFortuneService">
+    </bean>
+
     <bean id="myCoach"
         class="me.thijmenl98.Coaches.FootballCoach">
+        <constructor-arg ref="myFortuneService"/>
     </bean>
 
 </beans>

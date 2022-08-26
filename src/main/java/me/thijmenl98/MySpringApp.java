@@ -23,6 +23,7 @@ public class MySpringApp {
 
         // Call Methods on Bean
         System.out.println(theCoach.getDailyWorkout());
+        System.out.println(theCoach.getDailyFortune());
 
         // Close Context
         context.close();
