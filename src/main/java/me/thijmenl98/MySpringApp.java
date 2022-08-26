@@ -1,5 +1,6 @@
 package me.thijmenl98;
 
+import me.thijmenl98.Coaches.Coach;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**

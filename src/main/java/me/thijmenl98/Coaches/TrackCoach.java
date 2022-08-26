@@ -1,4 +1,4 @@
-package me.thijmenl98;
+package me.thijmenl98.Coaches;
 
 /**
  * <h3>Project: spring-bc</h3>

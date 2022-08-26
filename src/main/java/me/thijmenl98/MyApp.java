@@ -1,5 +1,9 @@
 package me.thijmenl98;
 
+import me.thijmenl98.Coaches.BaseballCoach;
+import me.thijmenl98.Coaches.Coach;
+import me.thijmenl98.Coaches.TrackCoach;
+
 /**
  * <h3>Project: spring-bc</h3>
  * <h5>File: MyApp</h5>
