@@ -17,4 +17,7 @@
                   value="ALL"/>
     </bean>
 
+    <!-- Add entry to enable component scanning -->
+    <context:component-scan base-package="me.thijmenl98"/>
+
 </beans>

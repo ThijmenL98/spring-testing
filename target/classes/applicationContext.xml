@@ -7,9 +7,6 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <!-- Load the property files -->
-    <context:property-placeholder location="classpath:sport.properties"/>
-
     <!-- Define your beans here -->
     <bean id="myLoggerConfig"
           class="me.thijmenl98.MyLoggerConfig"
@@ -20,27 +17,7 @@
                   value="ALL"/>
     </bean>
 
-    <bean id="hFortuneService"
-          class="me.thijmenl98.FortuneServices.HappyFortuneService">
-    </bean>
-
-    <bean id="rFortuneService"
-          class="me.thijmenl98.FortuneServices.RandomFortuneService">
-    </bean>
-
-    <bean id="myCoach"
-          class="me.thijmenl98.Coaches.FootballCoach">
-        <constructor-arg ref="hFortuneService"/>
-    </bean>
-
-    <bean id="myOtherCoach"
-          class="me.thijmenl98.Coaches.TrackCoach">
-        <property name="fortuneService"
-                  ref="rFortuneService"/>
-        <property name="emailAddress"
-                  value="${foo.emailAddress}"/>
-        <property name="team"
-                  value="${foo.team}"/>
-    </bean>
+    <!-- Add entry to enable component scanning -->
+    <context:component-scan base-package="me.thijmenl98"/>
 
 </beans>
