@@ -4,18 +4,18 @@ import org.springframework.stereotype.Component;
 
 /**
  * <h3>Project: spring-bc</h3>
- * <h5>File: TennisCoach</h5>
+ * <h5>File: GolfCoach</h5>
  * <h5>Package: me.thijmenl98.coaches</h5>
  *
  * @author Thijmen Langendam
  * @date 2022-08-27
  **/
 @Component
-public class TennisCoach implements Coach {
+public class GolfCoach implements Coach {
 
     @Override
     public String getDailyWorkout() {
-        return "Hit 100 balls";
+        return "Practice on driving range";
     }
 
 }
