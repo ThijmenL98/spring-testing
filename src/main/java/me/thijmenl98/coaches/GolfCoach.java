@@ -2,6 +2,7 @@ package me.thijmenl98.coaches;
 
 import me.thijmenl98.services.fortune.FortuneService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 /**
@@ -25,6 +26,7 @@ public class GolfCoach implements Coach {
     }
 
     @Autowired
+    @Qualifier("externalFortuneService")
     public void setFortuneService(FortuneService fortuneService) {
         this.fortuneService = fortuneService;
     }
