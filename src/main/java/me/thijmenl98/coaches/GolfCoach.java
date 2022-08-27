@@ -5,6 +5,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 /**
  * <h3>Project: spring-bc</h3>
  * <h5>File: GolfCoach</h5>
@@ -19,6 +22,16 @@ public class GolfCoach implements Coach {
     private FortuneService fortuneService;
 
     public GolfCoach() {
+    }
+
+    @PostConstruct
+    public void init() {
+        System.out.println("[" + this.getClass().getSimpleName() + "] initialized");
+    }
+
+    @PreDestroy
+    public void destroy() {
+        System.out.println("[" + this.getClass().getSimpleName() + "] destroyed");
     }
 
     public FortuneService getFortuneService() {
