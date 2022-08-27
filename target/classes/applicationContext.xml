@@ -11,15 +11,21 @@
     <context:property-placeholder location="classpath:sport.properties"/>
 
     <!-- Define your beans here -->
-    <bean id="myLoggerConfig" class="me.thijmenl98.MyLoggerConfig" init-method="initLogger">
-        <property name="rootLoggerLevel" value="ALL" />
-        <property name="printedLoggerLevel" value="ALL"/>
+    <bean id="myLoggerConfig"
+          class="me.thijmenl98.MyLoggerConfig"
+          init-method="initLogger">
+        <property name="rootLoggerLevel"
+                  value="ALL"/>
+        <property name="printedLoggerLevel"
+                  value="ALL"/>
     </bean>
 
-    <bean id="hFortuneService" class="me.thijmenl98.FortuneServices.HappyFortuneService">
+    <bean id="hFortuneService"
+          class="me.thijmenl98.FortuneServices.HappyFortuneService">
     </bean>
 
-    <bean id="rFortuneService" class="me.thijmenl98.FortuneServices.RandomFortuneService">
+    <bean id="rFortuneService"
+          class="me.thijmenl98.FortuneServices.RandomFortuneService">
     </bean>
 
     <bean id="myCoach"
@@ -29,9 +35,12 @@
 
     <bean id="myOtherCoach"
           class="me.thijmenl98.Coaches.TrackCoach">
-        <property name="fortuneService" ref="rFortuneService"/>
-        <property name="emailAddress" value="${foo.emailAddress}"/>
-        <property name="team" value="${foo.team}"/>
+        <property name="fortuneService"
+                  ref="rFortuneService"/>
+        <property name="emailAddress"
+                  value="${foo.emailAddress}"/>
+        <property name="team"
+                  value="${foo.team}"/>
     </bean>
 
 </beans>

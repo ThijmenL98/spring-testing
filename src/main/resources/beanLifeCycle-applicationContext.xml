@@ -19,8 +19,9 @@
     </bean>
 
     <bean id="myCoach"
-          class="me.thijmenl98.Coaches.FootballCoach"
-          scope="prototype">
+          class="me.thijmenl98.Coaches.TrackCoach"
+          init-method="init"
+          destroy-method="destroy">
         <constructor-arg ref="hFortuneService"/>
     </bean>
 

@@ -5,12 +5,17 @@
     http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!-- Define your beans here -->
-    <bean id="myLoggerConfig" class="me.thijmenl98.MyLoggerConfig" init-method="initLogger">
-        <property name="rootLoggerLevel" value="ALL"/>
-        <property name="printedLoggerLevel" value="ALL"/>
+    <bean id="myLoggerConfig"
+          class="me.thijmenl98.MyLoggerConfig"
+          init-method="initLogger">
+        <property name="rootLoggerLevel"
+                  value="ALL"/>
+        <property name="printedLoggerLevel"
+                  value="ALL"/>
     </bean>
 
-    <bean id="hFortuneService" class="me.thijmenl98.FortuneServices.HappyFortuneService">
+    <bean id="hFortuneService"
+          class="me.thijmenl98.FortuneServices.HappyFortuneService">
     </bean>
 
     <bean id="myCoach"
