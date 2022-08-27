@@ -22,6 +22,14 @@ public class BaseballCoach implements Coach {
         this.fortuneService = fService;
     }
 
+    public void init() {
+        System.out.println("Initializing " + this.getClass().getSimpleName());
+    }
+
+    public void destroy() {
+        System.out.println("Destroying " + this.getClass().getSimpleName());
+    }
+
     @Override
     public String getDailyWorkout() {
         return "Spend 30 minutes on batting practice";
@@ -29,7 +37,7 @@ public class BaseballCoach implements Coach {
 
     @Override
     public String getDailyFortune() {
-        return "[BC]: " + fortuneService.getFortune();
+        return "[" + this.getClass().getSimpleName() + "]: " + fortuneService.getFortune();
     }
 
     public FortuneService getFortuneService() {

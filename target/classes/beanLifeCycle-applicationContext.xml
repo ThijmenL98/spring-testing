@@ -14,15 +14,15 @@
                   value="ALL"/>
     </bean>
 
-    <bean id="hFortuneService"
-          class="me.thijmenl98.FortuneServices.HappyFortuneService">
+    <bean id="rFortuneService"
+          class="me.thijmenl98.FortuneServices.RandomFortuneService">
     </bean>
 
     <bean id="myCoach"
           class="me.thijmenl98.Coaches.TrackCoach"
           init-method="init"
           destroy-method="destroy">
-        <constructor-arg ref="hFortuneService"/>
+        <constructor-arg ref="rFortuneService"/>
     </bean>
 
 </beans>

@@ -15,9 +15,19 @@ public class FootballCoach implements Coach {
     private FortuneService fortuneService;
     private String emailAddress, team;
 
-    public FootballCoach() {}
+    public FootballCoach() {
+    }
+
     public FootballCoach(FortuneService fService) {
         this.fortuneService = fService;
+    }
+
+    public void init() {
+        System.out.println("Initializing " + this.getClass().getSimpleName());
+    }
+
+    public void destroy() {
+        System.out.println("Destroying " + this.getClass().getSimpleName());
     }
 
     @Override
@@ -27,7 +37,7 @@ public class FootballCoach implements Coach {
 
     @Override
     public String getDailyFortune() {
-        return "[FC]: " + fortuneService.getFortune();
+        return "[" + this.getClass().getSimpleName() + "]: " + fortuneService.getFortune();
     }
 
     public FortuneService getFortuneService() {

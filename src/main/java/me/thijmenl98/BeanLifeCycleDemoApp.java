@@ -20,6 +20,9 @@ public class BeanLifeCycleDemoApp {
         // Retrieve bean from spring container
         Coach theCoach = applicationContext.getBean("myCoach", Coach.class);
 
+        // Call Methods on Bean
+        System.out.println(theCoach.getDailyFortune());
+
         // Close the context
         applicationContext.close();
     }
