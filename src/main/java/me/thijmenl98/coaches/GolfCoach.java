@@ -1,5 +1,7 @@
 package me.thijmenl98.coaches;
 
+import me.thijmenl98.services.fortune.FortuneService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 /**
@@ -13,9 +15,32 @@ import org.springframework.stereotype.Component;
 @Component
 public class GolfCoach implements Coach {
 
+    private FortuneService fortuneService;
+
+    public GolfCoach() {
+    }
+
+    @Autowired
+    public GolfCoach(FortuneService fortuneService) {
+        this.fortuneService = fortuneService;
+    }
+
+    public FortuneService getFortuneService() {
+        return fortuneService;
+    }
+
+    public void setFortuneService(FortuneService fortuneService) {
+        this.fortuneService = fortuneService;
+    }
+
     @Override
     public String getDailyWorkout() {
-        return "Practice on driving range";
+        return "[" + this.getClass().getSimpleName() + "]: " + "Practice on driving range";
+    }
+
+    @Override
+    public String getDailyFortune() {
+        return "[" + this.getClass().getSimpleName() + "]: " + fortuneService.getDailyFortune();
     }
 
 }
