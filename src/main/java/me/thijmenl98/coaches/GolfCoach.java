@@ -20,15 +20,11 @@ public class GolfCoach implements Coach {
     public GolfCoach() {
     }
 
-    @Autowired
-    public GolfCoach(FortuneService fortuneService) {
-        this.fortuneService = fortuneService;
-    }
-
     public FortuneService getFortuneService() {
         return fortuneService;
     }
 
+    @Autowired
     public void setFortuneService(FortuneService fortuneService) {
         this.fortuneService = fortuneService;
     }
