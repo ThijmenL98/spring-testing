@@ -19,11 +19,16 @@
     <bean id="myCoach"
           class="me.thijmenl98.Coaches.FootballCoach">
         <constructor-arg ref="myFortuneService"/>
+
+        <property name="emailAddress" value="frank.appleseed@gmail.com"/>
+        <property name="team" value="Blue Dolphins"/>
     </bean>
 
     <bean id="myOtherCoach"
           class="me.thijmenl98.Coaches.TrackCoach">
         <property name="fortuneService" ref="myFortuneService"/>
+        <property name="emailAddress" value="john.doe@gmail.com"/>
+        <property name="team" value="Red Hawks"/>
     </bean>
 
 </beans>

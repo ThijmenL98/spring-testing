@@ -9,7 +9,6 @@ package me.thijmenl98.Coaches;
  * @date 2022-08-26
  **/
 public interface Coach {
-
     String getDailyWorkout();
 
     String getDailyFortune();

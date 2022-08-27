@@ -13,8 +13,11 @@ import me.thijmenl98.FortuneServices.FortuneService;
 public class TrackCoach implements Coach {
 
     private FortuneService fortuneService;
+    private String emailAddress, team;
 
-    public TrackCoach() {}
+    public TrackCoach() {
+    }
+
     public TrackCoach(FortuneService fService) {
         this.fortuneService = fService;
     }
@@ -33,7 +36,23 @@ public class TrackCoach implements Coach {
         return fortuneService;
     }
 
+    public String getEmailAddress() {
+        return emailAddress;
+    }
+
+    public String getTeam() {
+        return team;
+    }
+
     public void setFortuneService(FortuneService fortuneService) {
         this.fortuneService = fortuneService;
+    }
+
+    public void setEmailAddress(String emailAddress) {
+        this.emailAddress = emailAddress;
+    }
+
+    public void setTeam(String team) {
+        this.team = team;
     }
 }

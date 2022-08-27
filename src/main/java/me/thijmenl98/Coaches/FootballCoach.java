@@ -13,6 +13,7 @@ import me.thijmenl98.FortuneServices.FortuneService;
 public class FootballCoach implements Coach {
 
     private FortuneService fortuneService;
+    private String emailAddress, team;
 
     public FootballCoach() {}
     public FootballCoach(FortuneService fService) {
@@ -33,7 +34,23 @@ public class FootballCoach implements Coach {
         return fortuneService;
     }
 
+    public String getEmailAddress() {
+        return emailAddress;
+    }
+
+    public String getTeam() {
+        return team;
+    }
+
     public void setFortuneService(FortuneService fortuneService) {
         this.fortuneService = fortuneService;
+    }
+
+    public void setEmailAddress(String emailAddress) {
+        this.emailAddress = emailAddress;
+    }
+
+    public void setTeam(String team) {
+        this.team = team;
     }
 }
