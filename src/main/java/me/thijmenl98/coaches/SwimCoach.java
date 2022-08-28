@@ -10,18 +10,21 @@ import javax.annotation.PreDestroy;
 
 /**
  * <h3>Project: spring-bc</h3>
- * <h5>File: GolfCoach</h5>
+ * <h5>File: SwimCoach</h5>
  * <h5>Package: me.thijmenl98.coaches</h5>
  *
  * @author Thijmen Langendam
- * @date 2022-08-27
+ * @date 2022-08-28
  **/
 @Component
-public class GolfCoach implements Coach {
+public class SwimCoach implements Coach {
 
     private FortuneService fortuneService;
 
-    public GolfCoach() {
+    public SwimCoach() {}
+
+    public SwimCoach(FortuneService fortuneService) {
+        this.fortuneService = fortuneService;
     }
 
     @PostConstruct
@@ -34,19 +37,19 @@ public class GolfCoach implements Coach {
         System.out.println("[" + this.getClass().getSimpleName() + "] destroyed");
     }
 
-    public FortuneService getFortuneService() {
-        return fortuneService;
-    }
-
     @Autowired
-    @Qualifier("externalFortuneService")
+    @Qualifier("randomFortuneService")
     public void setFortuneService(FortuneService fortuneService) {
         this.fortuneService = fortuneService;
     }
 
+    public FortuneService getFortuneService() {
+        return fortuneService;
+    }
+
     @Override
     public String getDailyWorkout() {
-        return "[" + this.getClass().getSimpleName() + "]: Practice on driving range";
+        return "[" + this.getClass().getSimpleName() + "]: Swim 10 lanes";
     }
 
     @Override

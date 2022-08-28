@@ -48,7 +48,7 @@ public class TennisCoach implements Coach {
 
     @Override
     public String getDailyWorkout() {
-        return "[" + this.getClass().getSimpleName() + "]: " + "Hit 100 balls";
+        return "[" + this.getClass().getSimpleName() + "]: Hit 100 balls";
     }
 
     @Override
