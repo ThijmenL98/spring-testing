@@ -1,12 +1,13 @@
 package me.thijmenl98.configurations;
 
+import me.thijmenl98.coaches.BasketballCoach;
 import me.thijmenl98.coaches.Coach;
 import me.thijmenl98.coaches.SwimCoach;
 import me.thijmenl98.services.fortune.FortuneService;
 import me.thijmenl98.services.fortune.RandomFortuneService;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 
 /**
  * <h3>Project: spring-bc</h3>
@@ -17,7 +18,7 @@ import org.springframework.context.annotation.Configuration;
  * @date 2022-08-27
  **/
 @Configuration
-//@ComponentScan("me.thijmenl98")
+@PropertySource("classpath:sport.properties")
 public class SportConfig {
 
     @Bean
@@ -27,8 +28,12 @@ public class SportConfig {
 
     @Bean
     public Coach swimCoach() {
-        SwimCoach swimCoach = new SwimCoach(randomFortuneService());
-        return swimCoach;
+        return new SwimCoach(randomFortuneService());
+    }
+
+    @Bean
+    public Coach basketballCoach() {
+        return new BasketballCoach(randomFortuneService());
     }
 
 }
