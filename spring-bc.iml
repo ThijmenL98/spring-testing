@@ -17,10 +17,8 @@
     </facet>
     <facet type="Spring" name="Spring">
       <configuration>
-        <fileset id="fileset" name="ApplicationContext" removed="false">
-          <file>file://$MODULE_DIR$/src/main/resources/applicationContext.xml</file>
-          <file>file://$MODULE_DIR$/src/main/resources/beanScope-applicationContext.xml</file>
-          <file>file://$MODULE_DIR$/src/main/resources/beanLifeCycle-applicationContext.xml</file>
+        <fileset id="fileset" name="Spring Application Context" removed="false">
+          <file>file://$MODULE_DIR$/web/WEB-INF/spring-mvc-demo-servlet.xml</file>
         </fileset>
       </configuration>
     </facet>
