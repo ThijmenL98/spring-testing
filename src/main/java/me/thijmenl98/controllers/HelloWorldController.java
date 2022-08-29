@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
  * @date 2022-08-29
  **/
 @Controller
+@RequestMapping("/")
 public class HelloWorldController {
 
     @RequestMapping("/showForm")

@@ -18,6 +18,7 @@
           <element id="library" level="project" name="Maven: org.springframework:spring-web:5.3.22" />
           <element id="library" level="project" name="Maven: org.springframework:spring-jcl:5.3.22" />
           <element id="library" level="project" name="Maven: org.springframework:spring-webmvc:5.3.22" />
+          <element id="library" level="project" name="javax.servlet.jstl" />
         </element>
       </element>
     </root>
