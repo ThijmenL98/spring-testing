@@ -1,7 +1,8 @@
 package me.thijmenl98.model;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.util.LinkedHashMap;
-import java.util.Objects;
 
 /**
  * <h3>Project: spring-bc</h3>
@@ -13,9 +14,17 @@ import java.util.Objects;
  **/
 public class Student {
 
+    @NotNull(message = "First name is required")
+    @Size(min = 1)
     private String firstName;
+
+    @NotNull(message = "Last name is required")
+    @Size(min = 1)
     private String lastName;
+
     private String continent;
+
+    @NotNull
     private String favouriteLanguage;
     private String[] operatingSystems;
 

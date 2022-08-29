@@ -10,13 +10,21 @@
 <html>
     <head>
         <title>New Student Registration Form</title>
+
+        <style>
+            .error {color:red}
+        </style>
     </head>
 
     <body>
         <form:form action="processForm" modelAttribute="student">
             First name: <form:input path="firstName"/>
+            <form:errors path="firstName" cssClass="error"/>
             <br/>
             Last name: <form:input path="lastName"/>
+            <form:errors path="lastName" cssClass="error"/>
+            <br/>
+
             <br/>
             Continent:
             <form:select path="continent">
@@ -28,12 +36,15 @@
             Favourite Language:
             <br/>
             <form:radiobuttons path="favouriteLanguage" items="${student.languageOptions}"/>
+            <form:errors path="favouriteLanguage" cssClass="error"/>
             <br/>
 
             <br/>
             Operating Systems:
             <br/>
             <form:checkboxes path="operatingSystems" items="${student.operatingSystemOptions}"/>
+            <br/>
+
             <br/>
             <input type="submit" value="Submit"/>
         </form:form>
