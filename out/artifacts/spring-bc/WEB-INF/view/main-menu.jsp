@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://www.springframework.org/tags" %>
 <%--
   Created by IntelliJ IDEA.
   User: thijm
@@ -7,7 +8,11 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
+    <link href="<c:url value="/resources/test.css"/>" rel="stylesheet" type="text/css"/>
+
     <body>
         <h2>Spring MVC Demo - Home Page</h2>
+        <hr>
+        <a href="showForm">Hello World form</a>
     </body>
 </html>

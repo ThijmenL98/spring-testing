@@ -1,7 +1,10 @@
 package me.thijmenl98.controllers;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import javax.servlet.http.HttpServletRequest;
 
 /**
  * <h3>Project: spring-bc</h3>
@@ -24,5 +27,13 @@ public class HelloWorldController {
         return "helloWorld/process";
     }
 
+    @RequestMapping("/shoutFormResult")
+    public String shout(HttpServletRequest request, Model model) {
+        String message = "Hello, " + request.getParameter("studentName") + "!";
+
+        model.addAttribute("introduction", message);
+
+        return "helloWorld/process";
+    }
 
 }

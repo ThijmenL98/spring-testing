@@ -7,12 +7,14 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-<head>
-    <title>Hello World - Processed Form</title>
-</head>
-<body>
-    Hello World of Spring!
-    <br/>
-    Student name: ${param.studentName}
-</body>
+    <head>
+        <title>Hello World - Processed Form</title>
+    </head>
+    <body>
+        Hello World of Spring!
+        <br/>
+        Student name: ${param.studentName}
+        <br/>
+        Introduction: ${introduction}
+    </body>
 </html>
