@@ -12,9 +12,17 @@
         <title>Student Confirmation</title>
     </head>
     <body>
-        Student confirmed: ${student.firstName} ${student.lastName} from ${student.continent}.
+        Student confirmed: ${student.firstName} ${student.lastName}.
+        <br/>
+        From ${student.continent} [${student.postalCode}].
+        <br/>
+        Aged ${student.age}
+        <br/>
+
         <br/>
         Favourite language: ${student.favouriteLanguage}.
+        <br/>
+
         <br/>
         Using OS's:
         <ul>

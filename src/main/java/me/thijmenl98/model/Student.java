@@ -1,7 +1,6 @@
 package me.thijmenl98.model;
 
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.*;
 import java.util.LinkedHashMap;
 
 /**
@@ -23,6 +22,15 @@ public class Student {
     private String lastName;
 
     private String continent;
+
+    @Min(value = 1900, message = "Year too long ago")
+    @Max(value = 2020, message = "Year can not surpass today")
+    @NotNull(message = "D.O.B. is required")
+    private Integer dob;
+    private int age;
+
+    @Pattern(regexp = "^[1-9][0-9]{3} ?(?!sa|sd|ss|SA|SD|SS)[A-Za-z]{2}$", message = "Postal Code does not conform to NNNN AA")
+    private String postalCode;
 
     @NotNull
     private String favouriteLanguage;
@@ -85,6 +93,30 @@ public class Student {
 
     public void setFavouriteLanguage(String favouriteLanguage) {
         this.favouriteLanguage = favouriteLanguage;
+    }
+
+    public Integer getDob() {
+        return dob;
+    }
+
+    public void setDob(Integer dob) {
+        this.dob = dob;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public String getPostalCode() {
+        return postalCode;
+    }
+
+    public void setPostalCode(String postalCode) {
+        this.postalCode = postalCode;
     }
 
     public String[] getOperatingSystems() {

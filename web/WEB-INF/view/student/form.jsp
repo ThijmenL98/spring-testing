@@ -26,10 +26,18 @@
             <br/>
 
             <br/>
+            Date of birth: <form:input path="dob"/>
+            <form:errors path="dob" cssClass="error"/>
+            <br/>
+
+            <br/>
             Continent:
             <form:select path="continent">
                 <form:options items="${student.continentOptions}"/>
             </form:select>
+            <br/>
+            Postal Code: <form:input path="postalCode"/>
+            <form:errors path="postalCode" cssClass="error"/>
             <br/>
 
             <br/>
