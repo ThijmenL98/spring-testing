@@ -34,6 +34,8 @@ public class StudentController {
 
     @RequestMapping("/processForm")
     public String processForm(@Valid @ModelAttribute("student") Student student, BindingResult bindingResult) {
+        System.out.println("Binding result: " + bindingResult + "\n\n");
+
         if (bindingResult.hasErrors()) {
             return "student/form";
         } else {

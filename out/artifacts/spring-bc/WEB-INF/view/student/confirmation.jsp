@@ -18,6 +18,8 @@
         <br/>
         Aged ${student.age}
         <br/>
+        Following course ${student.courseCode}
+        <br/>
 
         <br/>
         Favourite language: ${student.favouriteLanguage}.

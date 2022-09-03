@@ -1,5 +1,7 @@
 package me.thijmenl98.model;
 
+import me.thijmenl98.validation.StartsWith.StartsWith;
+
 import javax.validation.constraints.*;
 import java.util.LinkedHashMap;
 
@@ -31,6 +33,9 @@ public class Student {
 
     @Pattern(regexp = "^[1-9][0-9]{3} ?(?!sa|sd|ss|SA|SD|SS)[A-Za-z]{2}$", message = "Postal Code does not conform to NNNN AA")
     private String postalCode;
+
+    @StartsWith
+    private String courseCode;
 
     @NotNull
     private String favouriteLanguage;
@@ -117,6 +122,14 @@ public class Student {
 
     public void setPostalCode(String postalCode) {
         this.postalCode = postalCode;
+    }
+
+    public String getCourseCode() {
+        return courseCode;
+    }
+
+    public void setCourseCode(String courseCode) {
+        this.courseCode = courseCode;
     }
 
     public String[] getOperatingSystems() {
