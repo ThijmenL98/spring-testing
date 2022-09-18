@@ -17,12 +17,11 @@ public class TestHibernateWrite {
 
     public static void main(String[] args) {
 
-        SessionFactory factory = new Configuration()
+        try (SessionFactory factory = new Configuration()
                 .configure("hibernate.cfg.xml")
                 .addAnnotatedClass(Student.class)
-                .buildSessionFactory();
+                .buildSessionFactory()) {
 
-        try {
             Session session = factory.getCurrentSession();
             System.out.println("Creating new Student object");
             Student student = new Student("Paul", "Walker", "paul_walker@gmail.com");
@@ -35,8 +34,6 @@ public class TestHibernateWrite {
             session.getTransaction().commit();
 
             System.out.println("Done");
-        } finally {
-            factory.close();
         }
 
     }
