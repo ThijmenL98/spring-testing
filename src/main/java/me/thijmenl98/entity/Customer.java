@@ -1,19 +1,18 @@
-package me.thijmenl98.model;
+package me.thijmenl98.entity;
 
 import javax.persistence.*;
 
 /**
  * <h3>Project: spring-bc</h3>
- * <h5>File: Instructor</h5>
- * <h5>Package: me.thijmenl98.model</h5>
+ * <h5>File: Customer</h5>
+ * <h5>Package: me.thijmenl98.entity</h5>
  *
  * @author Thijmen Langendam
- * @date 2022-09-20
+ * @date 2022-09-28
  **/
-
 @Entity
-@Table(name = "instructor")
-public class Instructor {
+@Table(name = "customer")
+public class Customer {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,15 +28,11 @@ public class Instructor {
     @Column(name = "email")
     private String email;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "instructor_detail_id")
-    private InstructorDetail instructorDetail;
-
-    public Instructor() {
+    public Customer() {
 
     }
 
-    public Instructor(String firstName, String lastName, String email) {
+    public Customer(String firstName, String lastName, String email) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
@@ -75,22 +70,13 @@ public class Instructor {
         this.email = email;
     }
 
-    public InstructorDetail getInstructorDetail() {
-        return instructorDetail;
-    }
-
-    public void setInstructorDetail(InstructorDetail instructorDetail) {
-        this.instructorDetail = instructorDetail;
-    }
-
     @Override
     public String toString() {
-        return "Instructor {" +
+        return "Customer{" +
                 "id=" + id +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +
-                ", instructorDetail=" + instructorDetail +
                 '}';
     }
 }
